@@ -1,0 +1,23 @@
+
+Issue usage was very sparse for functional development; in fact, the majority of the issues were questions directed towards me, not development milestones.  Milestones were created that had no Issues associated with them (and remain open in the repo).
+Unit test coverage of functions is not comprehensive:
+
+
+
+----------- coverage: platform linux, python 3.5.2-final-0 -----------
+Name                            Stmts   Miss  Cover
+---------------------------------------------------
+blueChannelProcessing.py           64     19    70%
+greenChannel.py                    24     10    58%
+importImage.py                     18     12    33%
+svm.py                             83     48    42%
+test_blueChannel_UnitTests.py     122      0   100%
+---------------------------------------------------
+TOTAL                             311     89    71%
+
+
+test_Diagnosis() takes a while to run (~ 1 min); unit tests should be nimble so that they can be continually run during active development and deployment.
+log level not recorded; output in log is also a bit ambiguous (needs better annotation)
+code does not run with specified input; get FileNotFoundError even when file confirmed to exist
+any quantitative criteria on predicted output?  predicted output not recorded to log
+No input option to generate new training data; this appears to be locked into just using the training data that you have provided.
